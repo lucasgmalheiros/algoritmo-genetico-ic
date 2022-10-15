@@ -6,7 +6,6 @@ import re
 import csv
 import time
 
-
 # Percorre cada uma das instâncias de teste e as resolve com todos os operadores de crossover
 
 def natural_sort(array):
@@ -23,22 +22,21 @@ def get_file_name(path):
 
 
 # Caminho das instâncias de tempos de processamento no sistema
-instances = natural_sort(glob.glob('C:/Users/lg130/PycharmProjects/iniciacao_cientifica/'
-                                   'genetic_algorithm/main/separated_times/*.txt'))
+instances = natural_sort(glob.glob('./tempos_processamento/*.txt'))
 
 # Parâmetros fornecidos pelo irace
-parameters = (['--operador {} --solucao 194 --geracao 133 --probabilidade 0.7208'.format(n) for n in range(11)] +
+parameters = (['--operador {} --solucao 194 --geracao 133 --probabilidade 0.9'.format(n) for n in range(11)] +
               ['--operador 0 --solucao 194 --geracao 133 --probabilidade 0'])
 
 # Criação do arquivo de makespan
-with open('crossover_operators.csv', 'w', newline='') as txt:
+with open('./analise_estatistica/crossover_operators.csv', 'w', newline='') as txt:
     writer = csv.writer(txt, delimiter=';')
     header = ['Instancia', 'OrderBased', 'PositionBased', 'PMX', 'OnePoint',
               'TwoPoint', 'TwoPointPermutation', 'OrderTwo', 'Linear',
               'SequenceBased', 'LoopBased', 'TwoCutPTL', 'NoCross', 'Otimo']
     writer.writerow(header)
     data = np.zeros(14, dtype=object)
-    optimal_results = pd.read_csv('../optimal_solutions.csv',
+    optimal_results = pd.read_csv('./analise_estatistica/optimal_solutions.csv',
                                   sep=';')['upper_bound']
     for i, file in enumerate(instances):
         file_name = get_file_name(file)
