@@ -30,14 +30,14 @@ parameters = (['--operador {} --solucao 194 --geracao 133 --probabilidade 0.9'.f
 
 # Criação do arquivo de makespan
 with open('./analise_estatistica/crossover_operators.csv', 'w', newline='') as txt:
-    writer = csv.writer(txt, delimiter=';')
+    writer = csv.writer(txt, delimiter=',')
     header = ['Instancia', 'OrderBased', 'PositionBased', 'PMX', 'OnePoint',
               'TwoPoint', 'TwoPointPermutation', 'OrderTwo', 'Linear',
               'SequenceBased', 'LoopBased', 'TwoCutPTL', 'NoCross', 'Otimo']
     writer.writerow(header)
     data = np.zeros(14, dtype=object)
     optimal_results = pd.read_csv('./analise_estatistica/optimal_solutions.csv',
-                                  sep=';')['upper_bound']
+                                  sep=',')['upper_bound']
     for i, file in enumerate(instances):
         file_name = get_file_name(file)
         data[0] = file_name
@@ -51,5 +51,5 @@ with open('./analise_estatistica/crossover_operators.csv', 'w', newline='') as t
             data[j + 1] = str(makespan)
         end = time.time()
         delta = end - start
-        print(';'.join(data), 'Tempo no arquivo: {:.2f}s'.format(delta))
+        print(','.join(data), 'Tempo no arquivo: {:.2f}s'.format(delta))
         writer.writerow(data)
