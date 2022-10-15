@@ -2,7 +2,7 @@
 
 ## Análise dos operadores de crossover em algoritmos genéticos aplicados a problemas de Flow Shop Scheduling
 
-#### Projeto de iniciação científica desenvolvido por mim, Lucas Gabriel Malheiros, como bolsista do CNPq entre 08/2021 e 08/2022 sob orientação do Prof. Dr. Roberto Fernandes Tavares Neto, do Departamento de Engenharia de Produção da Universidade Federal de São Carlos.
+#### Códigos do projeto de iniciação científica desenvolvido por mim, Lucas Gabriel Malheiros, como bolsista do CNPq entre 08/2021 e 08/2022 sob orientação do Prof. Dr. Roberto Fernandes Tavares Neto, do Departamento de Engenharia de Produção da Universidade Federal de São Carlos.
 
 A pesquisa teve como objetivo comparar o desempenho de operadores de crossover em [algoritmos genéticos](https://en.wikipedia.org/wiki/Genetic_algorithm)
 aplicados à resolução de problemas de [*flowshop scheduling*](https://en.wikipedia.org/wiki/Flow-shop_scheduling) permutacionais. Para determinar os operadores de
