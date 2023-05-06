@@ -60,7 +60,7 @@ def evolution(operator_n, file, n_sol, n_gen, cross_prob):
                 cross = operator.crossover(parent1, parent2)
                 new_gen[c], new_gen[c + 1] = cross[0], cross[1]
                 c += 2
-            else:  # Caso o crossover não for realizado
+            else:  # Caso o crossover não seja realizado
                 new_gen[c], new_gen[c + 1] = parent1, parent2
                 c += 2
             # Nova seleção após cada reprodução
